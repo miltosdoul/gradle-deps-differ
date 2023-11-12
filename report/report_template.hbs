@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradle Dependencies diff report</title>
+</head>
+
+<body>
+  <h1>Gradle Dependency Differ</h1>
+  <div class="dep-list">
+    {{#each this}}
+    <span class="name">{{this.dependency.name}}:{{this.dependency.namespace}}</span>
+    <div class="ver">
+      &nbsp;&nbsp;
+      <span class="ver-from">{{this.gradle_versions.[0].version_before}}</span>
+      &rarr;
+      <span class="ver-to">{{this.gradle_versions.[0].version_after}}</span>
+    </div>
+    {{/each}}
+  </div>
+</body>
+
+</html>
