@@ -100,6 +100,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.create-release.outputs.upload_url }} 
-          asset_path: ./target/release/${{ steps.make-checksum.outputs.name }}
+          asset_path: ./target/release/${{ steps.make-checksum.outputs.checksum_name }}
           asset_name: gradle-deps-differ-stable.sha256sum
           asset_content_type: text/plain
