@@ -28,6 +28,8 @@ jobs:
   create-release:
     name: Create release on Github
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     outputs: 
       upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
@@ -46,6 +48,8 @@ jobs:
     name: Build and upload release artifacts
     needs: [ tests, create-release ]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
       
